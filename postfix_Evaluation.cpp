@@ -9,7 +9,9 @@ int main()
     string postfix;
     cout << "Enter the postfix expression to Evaluate the Result\n";
     cin >> postfix;
+
     stack<int> st;
+
     for (int i = 0; i < postfix.length(); i++)
     {
         char ch = postfix[i];
@@ -51,15 +53,9 @@ int main()
 
             default:
                 cout << "Invalid operator encountered" << endl;
-                return 0;
             }
             st.push(result);
         }
-    }
-    if (st.empty())
-    {
-        cout << "Error: no result on stack (invalid expression)\n";
-        return 1;
     }
 
     int finalResult = st.top();
